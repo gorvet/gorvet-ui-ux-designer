@@ -32,6 +32,7 @@ Use when relevant:
 
 - information hierarchy/navigation/search → `gorvet-information-architecture`
 - task flow/usability/recovery → `gorvet-ux-usability`
+- unresolved user/task assumptions requiring evidence → `gorvet-ux-research-testing`
 - visual composition/greybox/density → `gorvet-ui-structure-design`
 - tokens/components/system consistency → `gorvet-design-system`
 - interaction choice/state behavior → `gorvet-interaction-patterns`
