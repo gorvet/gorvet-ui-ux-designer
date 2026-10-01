@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 - 2026-10-01
+
+- Added editorial punctuation rules: headings/labels omit terminal periods by default; short display-support copy is distinguished from prose paragraphs.
+- Added proportional typographic hierarchy rules across page titles, section headings, component headings, supporting copy, body, labels and metadata.
+- Added safeguards against oversized display typography, artificial hierarchy gaps and shrinking body text to exaggerate headings.
+- Added ARIA intentionality guidance: prefer native semantics, avoid decorative ARIA, justify live regions and synchronize ARIA states with interaction state.
+- Added explicit SEO deferral rules for deployment-dependent metadata such as canonical URL, `og:url`, absolute social images, sitemap and `hreflang` targets.
+- Extended Visual QA and Quality Audit to verify typography, punctuation, ARIA intent and explicit SEO dependencies.
+
 ## 1.1.0 - 2026-10-01
 
 - Promoted `gorvet-ui-structure-design` into a true UI architecture + visual structure skill.
