@@ -16,6 +16,7 @@ Select only the specialists needed:
 
 - `gorvet-information-architecture`
 - `gorvet-ux-usability`
+- `gorvet-ux-research-testing` when material product/user uncertainty requires evidence
 - `gorvet-ui-structure-design`
 - `gorvet-design-system`
 - `gorvet-interaction-patterns`
@@ -58,7 +59,7 @@ Context → Build → Review.
 Context → relevant Design specialists → Build → Review.
 
 ### New product / missing design system
-Context → IA/usability/structure/design-system/accessibility (+ SEO where relevant) → Build → Review.
+Context → IA/usability/(research when needed)/structure/design-system/accessibility (+ SEO where relevant) → Build → Review.
 
 ### Existing poor UI
 Context → Visual QA/Quality Audit → targeted Design → Build → Review.
