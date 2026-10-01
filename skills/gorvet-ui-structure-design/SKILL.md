@@ -1,57 +1,122 @@
 ---
 name: gorvet-ui-structure-design
-description: Design interface hierarchy, greyboxing, composition, density, spacing, typography, surfaces, and visual direction from real content and user tasks. Use to create or critique visual UI while avoiding generic AI-generated composition.
+description: Architect interface structure and visual hierarchy from real content, tasks, relationships, actions, and constraints. Use to decide regions, sections, component patterns, sequence, density, responsive transformation, and visual direction while actively avoiding generic AI-generated composition.
 license: MIT
 metadata:
   author: GORVET
 ---
 
-# UI Structure & Visual Design
+# UI Architecture & Visual Structure
 
 Design in this order:
 
-**content → relationships → hierarchy → grouping → interaction → layout → components → visual treatment**
+**intent → content → relationships → hierarchy → grouping → sequence → component model → interaction → responsive transformation → visual treatment**
 
-## Structure first
+Do not start from a page-type template. Infer the structure from the task and available content.
 
-Resolve reading/action order, primary versus secondary content, grouping, density, scanability, states, and responsive transformation before decoration.
+## Architecture before styling
 
-Choose structures by semantics:
+Before choosing gradients, radius, cards, shadows, glass, pills, icons, oversized type, animation, or decorative imagery, resolve:
+
+- what the interface must help the user understand or accomplish;
+- what information/actions actually need to exist;
+- which regions/sections are necessary and why;
+- primary, secondary, supporting and contextual hierarchy;
+- which items belong together and which need separation;
+- sequence / reading / task order;
+- the semantic pattern or component that best represents each relationship;
+- relevant states and responsive transformations.
+
+Every major region should have a product, content, navigation, task, or trust purpose. Do not add sections merely because a familiar landing/dashboard template usually contains them.
+
+Whitespace is a valid completed state. Do not add icons, badges, metrics, labels, cards, blobs, gradients, dividers, metadata or helper copy merely to make an area feel filled.
+
+## Choose structures by semantics
+
+Examples:
 
 - table for row/column comparison;
 - list for repeated vertically scanned items;
-- card for a genuinely bounded object/task;
+- card for a genuinely bounded object, entity, choice or task;
 - panel/sidebar for persistent secondary context;
 - disclosure for optional complexity;
+- timeline/sequence when order or progression is the information;
+- editorial flow when narrative and pacing matter;
 - dashboard only when monitoring/metrics are truly the task.
 
-Do not force unrelated sections into the same visual recipe. In particular, avoid repeating `eyebrow → title → subtitle → content`, rounded CTA panels, identical card grids, or other section silhouettes unless the repeated structure reflects a repeated semantic relationship.
+A visual container is not a default component. Use grouping, spacing and typography before adding a bordered/rounded surface when they communicate the relationship sufficiently.
+
+## Structure-only pass
+
+The composition should still make sense if decorative effects are temporarily removed.
+
+Before styling, mentally reduce the proposal to neutral type, spacing and simple boundaries. Verify that hierarchy, rhythm, grouping, sequence and actions remain clear. If the design only feels intentional after adding gradients, shadows, glass, pills, blobs or motion, revisit the architecture.
+
+## Anti-AI preflight
+
+Read `references/ai-default-patterns.md` before finalizing substantial new visual structure.
+
+Check for formulaic composition before implementation:
+
+- repeated `eyebrow → large heading → subtitle → cards` section anatomy;
+- cards used where plain content/grouping would be clearer;
+- pill labels/buttons as automatic styling;
+- giant type used as a substitute for hierarchy;
+- generic SaaS hero/metrics/feature-grid/CTA recipes;
+- decorative completion: adding elements because whitespace feels unfinished;
+- automatic reveal-on-scroll or hover-lift behavior without interaction/narrative purpose;
+- a bundle of gradients + glass + large radius + shadows + glows used to manufacture “modern/premium”.
+
+One device may be justified. The default bundle is not.
+
+## Motif discipline
+
+Prefer a small, coherent visual vocabulary over many unrelated premium-UI effects.
+
+Choose which devices carry the identity: for example typography + composition + motion, or color + geometry + imagery. Do not automatically add every available device. Repetition should create a system, not expose a template.
+
+## Reference decomposition
+
+When a visual reference or brand example is supplied, decompose it before borrowing from it:
+
+- structure;
+- composition;
+- pacing/rhythm;
+- typography;
+- density/whitespace;
+- interaction;
+- motion;
+- surface treatment;
+- brand-specific devices.
+
+Extract transferable principles relevant to the task. Do not infer superficial motifs merely from a brand name. For example, “Apple-like” must not automatically mean giant type, glass, gradients, floating orbs or reveal animations.
 
 ## Visual direction
 
-Derive typography, spacing, color, surfaces, depth and imagery from product, audience, brand, task frequency, data density, references and existing system. Do not apply a universal “premium SaaS” style.
+Only after architecture is stable, derive typography, spacing, color, surfaces, depth, imagery and motion from product, audience, brand, task frequency, data density, references and the existing system.
 
-## Intentionality rule
+Do not apply a universal “premium SaaS” style.
 
-Before adding a container, border, shadow, radius, gradient, pill, icon, eyebrow, accent, oversized type, CTA panel or animation, ask whether it communicates hierarchy, grouping, affordance, state, sequence, emphasis, elevation, or brand character. If none apply, simplify.
+Before adding a container, border, shadow, radius, gradient, pill, icon, eyebrow, accent, oversized type, CTA panel or animation, ask whether it communicates hierarchy, grouping, affordance, state, sequence, emphasis, elevation, continuity or brand character. If none apply, simplify.
 
-Read `references/ai-default-patterns.md` during substantial design/review work.
+## Responsive architecture
 
-## References
-
-When visual references are supplied, extract characteristics such as hierarchy, rhythm, density, typographic contrast, surface logic, image treatment and navigation behavior. Do not blindly clone composition or ignore explicit project tokens.
+Responsive design is not only wrapping columns. Decide what reorders, collapses, persists, becomes disclosure, changes density, or needs a different interaction at narrow/intermediate/wide sizes.
 
 ## Handoff
 
-Keep it implementation-ready:
+Keep it implementation-ready and concise:
 
 ```text
-HIERARCHY
-LAYOUT / GROUPING
-COMPONENTS + PURPOSE
+INTENT
+STRUCTURE / SECTION MAP
+HIERARCHY + SEQUENCE
+COMPONENT MODEL + PURPOSE
+ACTIONS / INTERACTIONS
 STATES
-RESPONSIVE
-VISUAL DIRECTION
+RESPONSIVE TRANSFORMATION
+VISUAL DIRECTION + MOTIFS
+ANTI-AI RISKS TO AVOID
 ```
 
 Avoid arbitrary pixels when the project already has a token/utility system.
