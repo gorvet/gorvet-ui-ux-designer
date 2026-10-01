@@ -1,6 +1,6 @@
 ---
 name: gorvet-visual-qa
-description: Perform visual and responsive QA on implemented interfaces using rendered pages, screenshots, or static code evidence. Use after UI implementation or when diagnosing an existing screen; verifies hierarchy, typography, density, viewport fit, spacing, states, references, responsiveness, accessibility smoke checks, and visible AI-template defects.
+description: Perform visual and responsive QA on implemented interfaces using rendered pages, screenshots, or static code evidence. Use after UI implementation or when diagnosing an existing screen; verifies hierarchy, typography, density, spacing, states, references, responsiveness, accessibility smoke checks, and visible AI-template defects.
 license: MIT
 metadata:
   author: GORVET
@@ -25,13 +25,12 @@ State what could not be visually verified. Never pretend static code review is r
 - primary hierarchy and action prominence;
 - grouping/proximity/alignment;
 - density and scanability;
-- whether each major viewport has a clear focal priority instead of several equally dominant modules;
-- hero/first-screen fit at realistic laptop heights, not only wide mockup canvases;
-- overloaded side-by-side compositions where dense copy competes with a dense showcase/code/diagram block;
-- excessive first-screen content: headline + long copy + CTAs + chips + metrics + showcase competing simultaneously;
+- whether each major section/functional region has a clear focal priority instead of several equally dominant modules;
+- overloaded side-by-side compositions where dense content competes with another dense content/showcase/data/code/diagram block;
+- supporting tags, metrics, secondary actions, previews or metadata competing with the region's main purpose;
 - typography hierarchy, content measure and readable line-height;
-- proportional relationships across page title, section headings, component headings, supporting copy, body and metadata;
-- oversized display type that consumes disproportionate viewport space or creates an artificial hierarchy gap;
+- proportional relationships across page/view title, section/region headings, component headings, supporting copy, body and metadata;
+- oversized display type that consumes disproportionate space or creates an artificial hierarchy gap;
 - heading/supporting-copy punctuation that conflicts with their editorial role;
 - surface/border/shadow/radius consistency;
 - decorative background grids, dots, noise, glows or gradients that compete with content or act as automatic “tech/AI” styling;
@@ -40,6 +39,7 @@ State what could not be visually verified. Never pretend static code review is r
 - long content, overflow and truncation;
 - empty/loading/error/disabled/selected/success states where relevant;
 - mobile/narrow, intermediate and wide behavior relevant to the product;
+- whether responsive transformations preserve the hierarchy of each region;
 - keyboard focus visibility and obvious accessibility regressions;
 - suspicious ARIA on generic containers, redundant accessible names, or live regions tied to decorative/passive changes;
 - comparison with project references/specification when supplied;
@@ -52,17 +52,17 @@ Read the type system as a scale, not as isolated sizes. Confirm that semantic le
 
 Headings normally should not end in periods unless the project style guide or message intentionally requires punctuation. Treat short display subcopy differently from prose paragraphs.
 
-## Viewport and focal-load pass
+## Region hierarchy and focal-load pass
 
-At common target viewport sizes, identify the intended first, second and third attention targets. If several large/high-contrast elements demand equal attention simultaneously, simplify, sequence, reduce or move one of them.
+For each major section or functional region, identify the intended first, second and third attention targets. If several large/high-contrast elements demand equal attention simultaneously, simplify, sequence, group or subordinate them.
 
-The first viewport does not need to contain the entire argument. Check that the primary message/action feels complete even if secondary proof, metrics, tags or showcase content continue below.
+Do not assume every visible area must be filled. Whitespace is not a defect and should not trigger another module, label, metric, illustration or background effect.
 
-Whitespace is not a defect. Do not treat unused space as a reason to add another module or background effect.
+A region may contain many elements when the task requires density, but the user should still be able to distinguish primary content/action from supporting/contextual material.
 
 ## Anti-template visual pass
 
-Temporarily ignore the copy and compare the silhouettes of major regions. If many unrelated sections collapse to the same anatomy (for example eyebrow + giant heading + lede + card grid, or rounded CTA band), treat that as a design defect unless the repeated semantics justify it.
+Temporarily ignore the copy and compare the silhouettes of major regions. If many unrelated regions collapse to the same anatomy (for example eyebrow + giant heading + lede + card grid, or rounded CTA band), treat that as a design defect unless the repeated semantics justify it.
 
 Also inspect whether “modernity” is being manufactured by stacking effects such as glass + gradient + grid + large radius + shadow + glow + reveal motion. Prefer a smaller coherent motif set.
 
