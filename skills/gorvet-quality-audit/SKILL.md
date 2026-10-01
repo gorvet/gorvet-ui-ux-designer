@@ -1,6 +1,6 @@
 ---
 name: gorvet-quality-audit
-description: Run a final cross-cutting audit of UI/UX work for generic AI design defaults, unnecessary complexity, design-system drift, duplicate components, hardcoded styling, accessibility risk, SEO applicability, and maintainability. Use as a completion gate for substantial new or redesigned interfaces and when refactoring AI-generated UI.
+description: Run a final cross-cutting audit of UI/UX work for generic AI design defaults, typographic/editorial drift, unnecessary complexity, design-system drift, duplicate components, hardcoded styling, accessibility risk, SEO applicability, and maintainability. Use as a completion gate for substantial new or redesigned interfaces and when refactoring AI-generated UI.
 license: MIT
 metadata:
   author: GORVET
@@ -22,7 +22,23 @@ Also check for “modern UI bundles”: multiple unrelated premium effects combi
 
 If generic AI-pattern accumulation materially weakens the design, do not merely report it. Restructure/simplify the affected areas before completion when editing capability exists.
 
-## 2. System discipline
+## 2. Typography and editorial consistency
+
+Treat typography as a system.
+
+Check:
+
+- coherent hierarchy across `h1`, `h2`, `h3`, supporting/subheading copy, body, labels and metadata;
+- proportional scale without exaggerated display sizes or arbitrary jumps;
+- appropriate line-height, measure, weight and spacing, not font-size alone;
+- responsive type that preserves relationships instead of carrying oversized desktop scale into smaller viewports;
+- headings/titles that do not end in periods by default;
+- short display/supporting copy vs normal prose punctuation handled according to semantic role;
+- no body/supporting text made artificially small simply to exaggerate headline contrast.
+
+Follow an explicit project/editorial style guide when one exists.
+
+## 3. System discipline
 
 Check for:
 
@@ -34,25 +50,29 @@ Check for:
 - inconsistent states, radius, spacing, type or color semantics;
 - a second token/component system created unnecessarily beside the project system.
 
-## 3. UX quality
+## 4. UX quality
 
 Check task/content clarity, primary action, feedback, recovery, empty/error/loading states where relevant, avoidable steps, hidden frequent actions, and misleading disabled states.
 
 For content-led/public pages, also verify that the section/component architecture follows the information rather than a generic page template.
 
-## 4. Accessibility gate
+## 5. Accessibility gate
 
 Accessibility baseline applies to human-facing UI. Critical keyboard, focus, semantics, labels, contrast/state cues, zoom/reflow, motion and dynamic behavior issues block completion when applicable.
 
+Review ARIA intentionality: generic containers should not receive ARIA merely for decoration; redundant visual diagrams may need to be hidden from assistive technology; live regions must be justified by meaningful updates; ARIA states must match real interaction state.
+
 If a deeper accessibility specialist was needed, ensure its critical findings were actually resolved rather than only mentioned.
 
-## 5. SEO gate
+## 6. SEO gate
 
-For public indexable pages, verify that technical SEO intent is coherent and that relevant `gorvet-frontend-seo` decisions were implemented. Missing deployment information may justify deferring specific items (for example a canonical URL), but silent omission is not a substitute for analysis.
+For public indexable pages, verify that technical SEO intent is coherent and that relevant `gorvet-frontend-seo` decisions were implemented.
+
+Deployment-dependent items such as canonical URL, `og:url`, absolute social-image URL, sitemap location or `hreflang` destinations may be deferred when required information is unavailable, but the dependency must be recognized explicitly. Silent omission is not analysis.
 
 For private/admin UI, do not create unnecessary SEO work.
 
-## 6. Evidence and correction
+## 7. Evidence and correction
 
 Prefer to fix blockers and major issues before delivery, then re-check the affected areas once. Avoid endless polishing loops.
 
