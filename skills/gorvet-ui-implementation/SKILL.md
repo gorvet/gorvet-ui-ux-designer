@@ -1,6 +1,6 @@
 ---
 name: gorvet-ui-implementation
-description: Implement approved UI/UX decisions in any detected frontend stack while preserving existing architecture, tokens, components, utilities, semantics, and optional framework-specific adapters. Use for production frontend coding after or during design decisions.
+description: Implement approved UI/UX decisions in any requested or detected frontend stack while preserving existing architecture, tokens, components, utilities, semantics, and optional framework-specific adapters. Use for production frontend coding in new frontends or existing projects.
 license: MIT
 metadata:
   author: GORVET
@@ -8,17 +8,31 @@ metadata:
 
 # UI Implementation
 
-Do not assume a framework. Inspect the project and implement in its existing system.
+Support both existing projects and new frontends. Do not invent a framework when the user already requested a stack or when plain HTML/CSS/JS is sufficient.
 
-## Detect
+## Mode A — Existing project
 
-Identify relevant rendering/frontend framework, styling approach, theme/tokens, component library, icons, state/data patterns, tests, and optional framework-specific skills.
+Inspect the relevant project before editing. Identify rendering/frontend framework, styling approach, theme/tokens, component library, icons, state/data patterns, tests, and optional framework-specific skills.
 
-Common technologies such as Bootstrap, Tailwind, Angular Material, shadcn, CSS/SCSS, React/Vue/Angular/Svelte, server templates, and plain HTML/CSS do **not** require an adapter. Work with them directly.
+Preserve the established architecture unless the task explicitly requires a redesign/migration.
+
+## Mode B — New frontend
+
+When no existing project/system exists:
+
+1. use the user's requested stack if one is specified;
+2. otherwise choose the smallest appropriate implementation approach for the task;
+3. establish only the minimal reusable foundations needed by the design (for example semantic variables/tokens, container/rhythm rules, and a few repeated components);
+4. do not fabricate a large design system, dependency stack, build pipeline, or component abstraction for a one-page result;
+5. keep the output runnable and easy to adopt.
+
+Examples: a requested HTML + Bootstrap + JS landing should remain HTML + Bootstrap + JS; a plain static page does not need React merely because the runtime can generate it.
+
+Common technologies such as Bootstrap, Tailwind, Angular Material, shadcn, CSS/SCSS, React/Vue/Angular/Svelte, server templates, and plain HTML/CSS/JS do **not** require an adapter. Work with them directly.
 
 ## Reuse hierarchy
 
-Prefer:
+For existing projects prefer:
 
 1. existing project component;
 2. existing project pattern;
@@ -29,6 +43,8 @@ Prefer:
 7. custom CSS/implementation;
 8. hardcoded one-off values only as a justified last resort.
 
+For new frontends, the same principle becomes: requested stack/framework primitive → minimal semantic foundation → reusable pattern where recurrence justifies it → custom one-off only when appropriate.
+
 ## Rules
 
 - Do not introduce another UI framework for a local task.
@@ -37,8 +53,10 @@ Prefer:
 - Do not create wrapper components that only rename an existing primitive without adding product meaning.
 - Preserve native semantics and accessibility behavior.
 - Keep responsive behavior explicit rather than accidental wrapping.
-- Handle loading, empty, error, disabled, selected, overflow and long-content states relevant to the task.
+- Handle loading, empty, error, disabled, selected, overflow and long-content states when relevant to the interface.
 - Keep custom CSS low-specificity and scoped to the right layer.
+- Implement the approved architecture; do not replace it with a familiar template during coding.
+- Do not add decorative effects, sections, cards, metrics, icons, badges or animation merely to make the implementation feel more complete.
 
 ## Optional adapters
 
