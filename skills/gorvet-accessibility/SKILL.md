@@ -28,6 +28,18 @@ Default target: **WCAG 2.2 AA expectations** unless the project defines a strict
 - Touch targets and spacing must support motor accessibility.
 - Decorative images use empty alternatives; informative media needs meaningful alternatives.
 
+## ARIA intentionality
+
+Do not add ARIA as decorative metadata or as a substitute for choosing the right semantic element.
+
+- Prefer native elements and relationships (`nav`, `main`, `button`, headings, lists, form controls, `aria-labelledby` where appropriate) before generic `div` + ARIA.
+- An `aria-label` on a generic container is not automatically useful. First decide whether the region/graphic is meaningful, interactive, redundant, or decorative.
+- If a visual diagram/ornament repeats information already available in nearby text and adds no independent meaning, prefer hiding it from assistive technology (`aria-hidden="true"`) rather than giving it a verbose accessible name.
+- If a custom visualization conveys unique information, expose that information through meaningful semantics/text, not only a label on an otherwise opaque container.
+- Use `aria-live` only for updates that genuinely need announcement. Do not announce passive scroll-driven decoration/status changes or repeatedly restate visible content.
+- Do not duplicate accessible names already provided by visible text unless the alternative name materially improves comprehension.
+- Keep ARIA states (`aria-expanded`, `aria-pressed`, `aria-selected`, etc.) synchronized with real interaction state.
+
 ## Test beyond automation
 
 When capabilities are available, include keyboard walkthrough, focus review, semantic/DOM review, contrast, zoom/narrow viewport, and screen-reader smoke checks for critical flows. Automated scanners are useful but insufficient.
