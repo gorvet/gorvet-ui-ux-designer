@@ -44,15 +44,34 @@ A clearly stated redesign requirement can override legacy visual conventions. Ac
 Determine only what is relevant:
 
 - product, audience, primary tasks, density and device context;
-- public/indexable vs private/admin surface;
+- new vs existing surface;
+- public/indexable vs private/non-indexable when relevant;
 - rendering/frontend framework and styling system;
 - component library and icon system;
 - typography, colors, spacing, radius, elevation, breakpoints/containers;
 - existing navigation, forms, tables/lists, feedback and state patterns;
 - existing hardcoding, duplication, drift or accessibility debt;
-- reference-image lessons: hierarchy, rhythm, density, layout, typography, surfaces, interaction.
+- references: what the user wants to learn from them and what should remain project-specific.
 
 Do not treat a screenshot as a specification unless it is marked normative.
+
+## Reference decomposition
+
+Do not translate a named reference or screenshot directly into superficial visual motifs.
+
+When references materially influence design, identify the relevant lessons across:
+
+- structure and information emphasis;
+- composition and hierarchy;
+- pacing/rhythm/whitespace;
+- typography behavior;
+- density;
+- interaction and navigation;
+- motion/transition logic;
+- surface treatment;
+- brand-specific devices that should **not** be copied automatically.
+
+For example, a request for an “Apple-like” experience may justify narrative pacing, focus, confident whitespace and restrained motion; it does not automatically justify glass, giant headings, gradients, floating spheres or reveal animations.
 
 ## Output
 
@@ -60,12 +79,13 @@ Keep the resolved context concise:
 
 ```text
 TASK / USERS
+SURFACE / DISCOVERABILITY
 SOURCES OF TRUTH
 STACK / SYSTEM
 REUSE
-REFERENCES
+REFERENCE LESSONS / NON-TRANSFERABLE MOTIFS
 CONSTRAINTS
 RISKS / MATERIAL CONFLICTS
 ```
 
-Create/update `DESIGN.md` only when persistent project-wide memory is useful.
+Create/update project-local design documentation only when persistent project-wide memory is useful. Do not require the user to edit files inside the installed GORVET package.
