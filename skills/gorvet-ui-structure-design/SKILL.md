@@ -25,13 +25,15 @@ Choose structures by semantics:
 - disclosure for optional complexity;
 - dashboard only when monitoring/metrics are truly the task.
 
+Do not force unrelated sections into the same visual recipe. In particular, avoid repeating `eyebrow → title → subtitle → content`, rounded CTA panels, identical card grids, or other section silhouettes unless the repeated structure reflects a repeated semantic relationship.
+
 ## Visual direction
 
 Derive typography, spacing, color, surfaces, depth and imagery from product, audience, brand, task frequency, data density, references and existing system. Do not apply a universal “premium SaaS” style.
 
 ## Intentionality rule
 
-Before adding a container, border, shadow, radius, gradient, pill, icon, accent, oversized type or animation, ask whether it communicates hierarchy, grouping, affordance, state, sequence, emphasis, elevation, or brand character. If none apply, simplify.
+Before adding a container, border, shadow, radius, gradient, pill, icon, eyebrow, accent, oversized type, CTA panel or animation, ask whether it communicates hierarchy, grouping, affordance, state, sequence, emphasis, elevation, or brand character. If none apply, simplify.
 
 Read `references/ai-default-patterns.md` during substantial design/review work.
 
