@@ -103,6 +103,19 @@ Check for formulaic composition before implementation:
 
 One device may be justified. The default bundle is not.
 
+### Preflight output required before implementation
+
+Record a compact decision handoff with:
+
+- the proposed major regions, their task/content purpose, focal priority and responsive change;
+- properties transferred from material references and where they appear in the proposal;
+- specific generic-pattern risks found in the proposal, with the content/interaction reason for retaining them or the structural correction made;
+- `PASS` or `REWORK`, with concrete reasons tied to the proposal.
+
+If no material pattern risk is found, identify the regions/compositions compared and why their relationships are appropriate. “Not AI-style”, “Apple-like” and “checklist passed” are not evidence. Do not infer failure from a single device such as a hero, gradient or card, or prescribe a replacement layout for every page.
+
+`PASS` means the architecture and applicable preflight concerns have been resolved sufficiently to implement. `REWORK` means resolve the material issue and re-check the affected composition before Build. Do not produce a retrospective preflight to justify code already written.
+
 ## 7. Motif discipline
 
 Prefer a small, coherent visual vocabulary over many unrelated premium-UI effects.

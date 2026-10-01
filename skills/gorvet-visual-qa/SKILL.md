@@ -71,3 +71,5 @@ Also inspect whether “modernity” is being manufactured by stacking effects s
 Fix high-impact visible defects, re-render/reinspect when possible, and avoid endless polish loops. Prioritize task/content clarity, accessibility, responsive correctness, architecture and system consistency before decorative refinement.
 
 Use `gorvet-quality-audit` as the final completion gate for substantial new/redesigned UI.
+
+Pass actual evidence and observations to the audit: region/state, viewport or static scope, observed hierarchy/repetition, defects corrected and re-check result. Capture alone is not a visual inspection; state the findings from the image or rendered interface. Keep functional results separate from composition findings. If only static evidence exists, explicitly leave rendered appearance unverified rather than describing the design as visually passed.

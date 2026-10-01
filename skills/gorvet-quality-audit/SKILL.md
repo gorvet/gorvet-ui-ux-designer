@@ -98,13 +98,22 @@ If the runtime cannot edit or render, state the limitation and return the highes
 
 ## Output
 
-When findings remain, prioritize them:
+Always record a concise final verdict for substantial new/redesigned UI, including when no material finding remains:
 
 ```text
-BLOCKERS
-MAJOR
-MODERATE
-OPTIONAL POLISH
+VERDICT: PASS | REWORK | UNVERIFIED
+SCOPE / EVIDENCE: actual regions, states, viewports and evidence inspected
+COMPOSITION: concrete repetition, focal-hierarchy and reference-transfer observations
+FINDINGS / CORRECTIONS: severity, affected element, fix and re-check result
+LIMITS / DEFERRALS: unverified applicable domains and missing dependencies, or none
 ```
 
-If no material finding remains, completion may proceed.
+- **PASS:** applicable checks have sufficient evidence, no blocker/major finding remains, and material corrections have been re-checked. Optional deployment-dependent SEO values may remain explicitly deferred; do not invent them to pass.
+- **REWORK:** a blocker/major finding remains, or required execution evidence is missing but can be obtained. Correct the issue and re-check affected regions before delivery; do not let time pressure or functional success override the verdict.
+- **UNVERIFIED:** an applicable quality domain cannot be evaluated sufficiently because of a genuine capability/input limitation. Identify the domain, evidence available and dependency needed. Known material defects remain named; do not disguise them as lack of evidence. Deliver only with an explicit bounded status, not as fully audited work.
+
+Use concrete element/region names or selectors and observations, not generic assurances such as “modern”, “clean” or “no AI patterns”. On a pass, record what was compared and why recurring structures/effects serve the content. An image capture proves capture, not that its composition was assessed. An accessibility or functional check does not substitute for the composition audit.
+
+Static evidence may support implementation findings; it cannot establish rendered typography, visual balance or responsive appearance. Keep those domains `UNVERIFIED` when rendered evidence is unavailable. On a revision, inspect the actual new artifact and affected cross-region patterns rather than carrying over the previous verdict.
+
+Prioritize remaining findings as BLOCKERS, MAJOR, MODERATE or OPTIONAL POLISH. Keep the record proportional to the task and available in the working handoff; the user-facing delivery may remain brief.

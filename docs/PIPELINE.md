@@ -30,6 +30,16 @@ Then select only the other specialists needed:
 
 The design stage resolves decisions before code. It does not require lengthy paperwork.
 
+### Execution evidence
+
+For substantial new/redesigned interfaces, each transition leaves a compact, observable handoff. A working note or project artifact is sufficient; no user approval or long report is required. Record decisions and evidence, not private reasoning. Reading a skill is not proof of executing it.
+
+- Context → Design: task/content priorities, constraints and concrete properties transferred from references.
+- Design → Build: regions and their purpose, focal hierarchy, responsive transformation and the structure-design preflight verdict. Only `PASS` advances; `REWORK` returns to Design.
+- Review → Delivery: final audit verdict, actual evidence inspected, concrete composition observations, corrections/re-checks and explicit limits.
+
+Missing evidence is an incomplete gate, not an implicit pass. See the output contracts in `gorvet-ui-structure-design` and `gorvet-quality-audit`.
+
 ### Anti-AI preflight
 
 Before implementation, substantial new visual structure must pass the preflight in `gorvet-ui-structure-design`:
@@ -65,6 +75,16 @@ If compatible framework-specific skills are available, use them as adapters for 
 `gorvet-quality-audit` is the final cross-cutting completion gate for substantial new/redesigned UI. It checks generic AI-style accumulation, architecture, system discipline, UX, accessibility, SEO applicability and maintainability. When editing capability exists, material blockers/major defects should be corrected before delivery and re-checked once.
 
 A successful build is not evidence of a successful interface.
+
+The final audit records `PASS`, `REWORK` or `UNVERIFIED`. `PASS` needs evidence for applicable domains and no remaining material defect. `REWORK` requires correction before completion when work is possible. `UNVERIFIED` names an actual capability/input limitation and permits only a clearly bounded handoff. Functional tests and captured screenshots do not substitute for composition findings. Static inspection cannot establish rendered visual quality.
+
+## Follow-up revisions
+
+Requests about modernity, monotony, density, appeal or reference resemblance require inspecting the current composition and revisiting Design + Review as warranted. Diagnose whether the problem concerns structure, treatment or both; a palette change is sufficient only when it resolves that diagnosis. Preserve still-valid decisions and re-check affected cross-region patterns. Speed requests reduce scope/documentation, not required quality gates.
+
+## Behavioral regression checks
+
+Use [PIPELINE_TESTS.md](PIPELINE_TESTS.md) to evaluate actual agent runs against these transitions. The repository validator checks packaging and references; it does not prove behavioral compliance or visual quality.
 
 ## Required baselines
 

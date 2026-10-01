@@ -89,6 +89,24 @@ Pass decisions, not essays. Keep working context compact:
 
 Create persistent documentation only when it prevents future rediscovery. Do not require a document for each stage.
 
+## Observable execution gates
+
+Reading a skill is preparation, not execution. For substantial new/redesigned UI, record the following concise decisions in the working handoff **before** crossing each transition. A compact tool-visible note or project artifact is sufficient; do not require user approval, a long report, or disclosure of private reasoning.
+
+- **Context → Design:** task/content priorities, applicable constraints, and the specific properties to transfer from material references. Brand names alone are not a visual direction.
+- **Design → Build:** proposed regions and their task/content purpose, focal hierarchy, responsive transformation, and the preflight verdict from `gorvet-ui-structure-design`. Build begins only after `PASS`; `REWORK` returns to Design. Record concrete decisions rather than “preflight done”.
+- **Review → Delivery:** the `gorvet-quality-audit` verdict, identified regions/states, evidence actually inspected, material corrections and re-checks, and any unverified domain. Functional tests and screenshots alone do not establish visual quality.
+
+Use the specialists' output contracts rather than inventing another checklist. If a required skill is unavailable, apply its known requirements explicitly and record that limitation; do not claim it was invoked. Missing execution evidence is an incomplete gate, not an implicit pass.
+
+## Revisions and speed requests
+
+Classify a follow-up by its effect, not by how few lines change. A request about modernity, visual appeal, monotony, density or resemblance to a reference requires inspecting the current composition and returning to Design + Review where the diagnosis calls for it. A palette-only change is valid when it addresses the diagnosed issue; do not assume it resolves a structural problem.
+
+Carry forward still-valid context and decisions. Review both changed regions and any affected cross-page patterns. User requests for speed reduce scope and documentation, not applicable quality gates; report remaining verification limits instead of claiming an unsupported pass.
+
 ## Completion
 
 Do not call UI work complete merely because code compiles. Completion means the result has passed the applicable architecture, accessibility, SEO, visual and quality checks with material defects fixed or explicitly bounded by runtime/project limitations.
+
+`REWORK` prevents completion while material defects can be corrected. `UNVERIFIED` permits a bounded handoff when capabilities or inputs genuinely prevent verification, but it must not be described as a full quality pass. Mention unresolved material defects or verification limits briefly in delivery.

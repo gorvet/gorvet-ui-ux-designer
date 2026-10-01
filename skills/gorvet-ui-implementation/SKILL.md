@@ -28,6 +28,8 @@ When no existing project/system exists:
 
 Examples: a requested HTML + Bootstrap + JS landing should remain HTML + Bootstrap + JS; a plain static page does not need React merely because the runtime can generate it.
 
+For substantial new/redesigned UI, require the architecture decision handoff and `PASS` preflight from `gorvet-ui-structure-design` before implementation. If they are missing, resolve that design work first; loading the skill or receiving brand names does not satisfy the gate. If implementation changes the approved composition materially, re-check the affected design decisions before continuing.
+
 Common technologies such as Bootstrap, Tailwind, Angular Material, shadcn, CSS/SCSS, React/Vue/Angular/Svelte, server templates, and plain HTML/CSS/JS do **not** require an adapter. Work with them directly.
 
 ## Reuse hierarchy

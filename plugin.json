@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gorvet-ui-ux-designer",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Vendor-neutral GORVET skills for UI/UX architecture, frontend implementation, accessibility, SEO, visual QA, and anti-AI-style production workflows.",
   "author": {
     "name": "Gorvet Estudios",

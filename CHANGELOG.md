@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.2 - 2026-10-01
+
+- Added observable decision/evidence handoffs at Context → Design, Design → Build and Review → Delivery; loading instructions no longer counts as gate execution.
+- Required a proposal-specific PASS/REWORK preflight before substantial UI implementation, with reference-transfer and composition decisions.
+- Added evidence-backed PASS/REWORK/UNVERIFIED audit verdicts and correction/re-check rules; functional tests, screenshots and static review cannot substitute for rendered composition evidence.
+- Routed visual follow-ups back through diagnosis, Design and Review as needed; speed requests reduce scope rather than bypassing gates.
+- Added behavioral regression briefs and scoring rules without prescribing a universal visual style.
+
 ## 1.1.1 - 2026-10-01
 
 - Added editorial punctuation rules: headings/labels omit terminal periods by default; short display-support copy is distinguished from prose paragraphs.
