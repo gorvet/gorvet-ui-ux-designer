@@ -27,7 +27,7 @@ Before choosing gradients, radius, cards, shadows, glass, pills, icons, oversize
 - the semantic pattern or component that best represents each relationship;
 - relevant states and responsive transformations.
 
-Every major region should have a product, content, navigation, task, or trust purpose. Do not add sections merely because a familiar landing/dashboard template usually contains them.
+Every major region should have a product, content, navigation, task, or trust purpose. Do not add regions merely because a familiar UI template usually contains them.
 
 Whitespace is a valid completed state. Do not add icons, badges, metrics, labels, cards, blobs, gradients, dividers, metadata or helper copy merely to make an area feel filled.
 
@@ -56,31 +56,33 @@ Before styling, mentally reduce the proposal to neutral type, spacing and simple
 
 Typography is a hierarchy, not a collection of independent font sizes.
 
-- Establish clear relationships among page title, section headings, component headings, supporting/subheading copy, body, labels and metadata.
+- Establish clear relationships among page/view title, section/region headings, component headings, supporting/subheading copy, body, labels and metadata.
 - Size, weight, line-height, measure and spacing must work together; do not rely on font size alone to communicate hierarchy.
 - Adjacent semantic levels should be visually distinguishable without creating arbitrary jumps.
 - Do not make an `h1`, `h2` or display heading enormous merely to manufacture visual impact or a “premium” feeling.
-- Display scale must be proportional to content importance, viewport, density, surrounding elements and expected reading distance.
-- A heading should not consume a disproportionate amount of the viewport unless that scale is intentionally central to the composition.
+- Display scale must be proportional to content importance, available space, density, surrounding elements and expected reading distance.
+- A heading should not dominate a region so strongly that supporting content becomes cramped or illegible unless that scale is intentionally central to the composition.
 - Do not shrink body/supporting text excessively to make headings appear more dramatic.
 - Preserve coherent hierarchy across breakpoints; responsive typography should reduce extremes rather than simply clamp a giant desktop scale.
 - Semantic heading level and visual size are related but not identical: preserve document semantics while styling according to the actual information hierarchy.
 
-When reviewing a page, compare the full scale as a system (`h1 → h2 → h3 → supporting copy → body → metadata`) rather than evaluating each size in isolation.
+When reviewing an interface, compare the full scale as a system (`primary title → section/region title → component title → supporting copy → body → metadata`) rather than evaluating each size in isolation.
 
-## 5. Viewport, density and focal hierarchy
+## 5. Section/region hierarchy and density
 
-Do not treat the first viewport as a container that must hold every important idea.
+Every major section or functional region should have a clear internal hierarchy.
 
-- Establish one dominant focal area per viewport/major composition. Secondary modules must visibly recede.
-- Do not cram headline, long supporting copy, multiple CTAs, chips/tags, metrics, showcase panels, code windows, diagrams and decorative backgrounds into the same hero merely because they are all “important”. Sequence information instead.
-- A hero may extend beyond one viewport when the narrative requires it, but the primary message and primary action should be understandable without the composition feeling clipped, overcrowded or unfinished at common laptop heights.
-- Test density at realistic viewport heights as well as widths. A layout that works only on a very tall or very wide canvas is not robust.
-- Avoid two high-complexity columns competing side by side. Use a split layout only when the relationship between both sides benefits from simultaneous comparison/viewing.
-- Do not fill every column, edge or empty region. Breathing room should separate hierarchy, not be treated as unused capacity.
+- Be able to identify what should attract attention first, second and third within that region.
+- One dominant focal element is usually enough. Secondary modules must visibly recede unless simultaneous comparison is the actual task.
+- Do not place several large/high-contrast elements side by side merely because they are all important. Sequence, group or subordinate them according to the information relationship.
+- Avoid dense split compositions when both sides contain high-complexity content. Use simultaneous columns only when viewing both at once materially helps comprehension or task completion.
+- Do not fill every column, edge or empty region. Breathing room is part of hierarchy, not unused capacity.
 - Density should follow task/content needs. More information visible at once is not automatically more useful.
-- Background treatment must remain subordinate to content. Decorative grids, dot matrices, glows, gradient fields, noise, blobs or technical line patterns are not default signals for “AI”, “developer” or “modern”.
-- If background decoration competes with text, components or focal hierarchy, simplify or remove it.
+- Supporting elements such as metadata, tags, metrics, secondary actions, previews, diagrams or code examples should not compete with the region's main purpose.
+- Background treatment must remain subordinate to foreground content. Decorative grids, dot matrices, glows, gradient fields, noise, blobs or technical line patterns are not default signals for “AI”, “developer”, “technical” or “modern”.
+- If background decoration competes with text, controls, data or focal hierarchy, simplify or remove it.
+
+Responsive layouts must preserve this hierarchy. A change of viewport may reorder or collapse content, but it should not create new competition between elements that were correctly prioritized at another size.
 
 ## 6. Anti-AI preflight
 
@@ -88,12 +90,12 @@ Read `references/ai-default-patterns.md` before finalizing substantial new visua
 
 Check for formulaic composition before implementation:
 
-- repeated `eyebrow → large heading → subtitle → cards` section anatomy;
+- repeated `eyebrow → large heading → subtitle → cards` anatomy across unrelated regions;
 - cards used where plain content/grouping would be clearer;
 - pill labels/buttons as automatic styling;
 - giant type used as a substitute for hierarchy;
-- generic SaaS hero/metrics/feature-grid/CTA recipes;
-- overloaded split heroes with copy on one side and a decorative/showcase card on the other by default;
+- generic SaaS/dashboard/component recipes applied without task justification;
+- overloaded split compositions with equally dominant content on both sides;
 - decorative completion: adding elements because whitespace feels unfinished;
 - automatic reveal-on-scroll or hover-lift behavior without interaction/narrative purpose;
 - a bundle of gradients + glass + large radius + shadows + glows used to manufacture “modern/premium”;
@@ -133,7 +135,7 @@ Before adding a container, border, shadow, radius, gradient, pill, icon, eyebrow
 
 ## 10. Responsive architecture
 
-Responsive design is not only wrapping columns. Decide what reorders, collapses, persists, becomes disclosure, changes density, or needs a different interaction at narrow/intermediate/wide sizes.
+Responsive design is not only wrapping columns. Decide what reorders, collapses, persists, becomes disclosure, changes density, or needs a different interaction at narrow/intermediate/wide sizes. Preserve each region's priority structure through those transformations.
 
 ## Handoff
 
@@ -141,14 +143,14 @@ Keep it implementation-ready and concise:
 
 ```text
 INTENT
-STRUCTURE / SECTION MAP
+STRUCTURE / REGIONS
 HIERARCHY + SEQUENCE
 COMPONENT MODEL + PURPOSE
 ACTIONS / INTERACTIONS
 STATES
 RESPONSIVE TRANSFORMATION
 TYPOGRAPHIC HIERARCHY
-VIEWPORT / DENSITY PRIORITIES
+REGION FOCAL + DENSITY PRIORITIES
 VISUAL DIRECTION + MOTIFS
 ANTI-AI RISKS TO AVOID
 ```
