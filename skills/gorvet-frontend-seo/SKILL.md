@@ -38,6 +38,16 @@ For indexable pages verify:
 - correct language/locale signals and `hreflang` when the project actually has alternates;
 - sitemap/feed considerations for discoverable URL sets.
 
+## Analyze or defer explicitly
+
+Do not silently omit an SEO item merely because deployment information is missing.
+
+- If the production URL is unknown, do not invent `canonical`, `og:url`, absolute social-image URLs, sitemap locations, or `hreflang` destinations. Mark those decisions as deferred/pending deployment information.
+- If a preferred social image does not exist, identify it as a missing asset when social sharing matters rather than fabricating a URL.
+- If robots/indexing intent is unclear, determine it from the product/context or flag the ambiguity before publishing behavior that may expose or hide content incorrectly.
+- If structured data suitability is uncertain, omit it rather than inventing a schema solely to “complete SEO”; explain the decision when relevant.
+- A valid deferral is an explicit decision with a dependency. Silence is not analysis.
+
 ## Structured data
 
 Use JSON-LD when suitable and supported by the target search feature. Structured data must describe visible truthful page content; never invent ratings, prices, authors, reviews or entities for rich results. Validate against current search-engine documentation.
@@ -45,6 +55,8 @@ Use JSON-LD when suitable and supported by the target search feature. Structured
 ## Social metadata
 
 When public sharing matters, implement consistent Open Graph/social preview metadata, including a suitable preferred image. Treat social metadata as sharing UX, not ranking magic.
+
+Use platform-specific metadata only when it adds meaningful compatibility beyond the chosen Open Graph baseline; do not add tags mechanically.
 
 ## JavaScript/rendering
 
