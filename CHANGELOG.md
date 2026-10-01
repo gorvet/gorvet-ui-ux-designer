@@ -4,7 +4,7 @@
 
 - Initial public architecture.
 - Four-stage adaptive pipeline: Context → Design → Build → Review.
-- Fourteen vendor-neutral specialist skills.
+- Fifteen vendor-neutral specialist skills.
 - Optional project UI specification and reference-image intake.
 - Optional framework-adapter protocol.
 - Accessibility and frontend SEO as first-class specialist concerns.
