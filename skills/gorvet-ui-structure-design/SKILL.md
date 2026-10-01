@@ -1,6 +1,6 @@
 ---
 name: gorvet-ui-structure-design
-description: Architect interface structure and visual hierarchy from real content, tasks, relationships, actions, and constraints. Use to decide regions, sections, component patterns, sequence, density, responsive transformation, and visual direction while actively avoiding generic AI-generated composition.
+description: Architect interface structure and visual hierarchy from real content, tasks, relationships, actions, and constraints. Use to decide regions, sections, component patterns, sequence, density, responsive transformation, typographic hierarchy, and visual direction while actively avoiding generic AI-generated composition.
 license: MIT
 metadata:
   author: GORVET
@@ -14,7 +14,7 @@ Design in this order:
 
 Do not start from a page-type template. Infer the structure from the task and available content.
 
-## Architecture before styling
+## 1. Architecture before styling
 
 Before choosing gradients, radius, cards, shadows, glass, pills, icons, oversized type, animation, or decorative imagery, resolve:
 
@@ -31,7 +31,7 @@ Every major region should have a product, content, navigation, task, or trust pu
 
 Whitespace is a valid completed state. Do not add icons, badges, metrics, labels, cards, blobs, gradients, dividers, metadata or helper copy merely to make an area feel filled.
 
-## Choose structures by semantics
+## 2. Choose structures by semantics
 
 Examples:
 
@@ -46,13 +46,29 @@ Examples:
 
 A visual container is not a default component. Use grouping, spacing and typography before adding a bordered/rounded surface when they communicate the relationship sufficiently.
 
-## Structure-only pass
+## 3. Structure-only pass
 
 The composition should still make sense if decorative effects are temporarily removed.
 
 Before styling, mentally reduce the proposal to neutral type, spacing and simple boundaries. Verify that hierarchy, rhythm, grouping, sequence and actions remain clear. If the design only feels intentional after adding gradients, shadows, glass, pills, blobs or motion, revisit the architecture.
 
-## Anti-AI preflight
+## 4. Typographic hierarchy
+
+Typography is a hierarchy, not a collection of independent font sizes.
+
+- Establish clear relationships among page title, section headings, component headings, supporting/subheading copy, body, labels and metadata.
+- Size, weight, line-height, measure and spacing must work together; do not rely on font size alone to communicate hierarchy.
+- Adjacent semantic levels should be visually distinguishable without creating arbitrary jumps.
+- Do not make an `h1`, `h2` or display heading enormous merely to manufacture visual impact or a “premium” feeling.
+- Display scale must be proportional to content importance, viewport, density, surrounding elements and expected reading distance.
+- A heading should not consume a disproportionate amount of the viewport unless that scale is intentionally central to the composition.
+- Do not shrink body/supporting text excessively to make headings appear more dramatic.
+- Preserve coherent hierarchy across breakpoints; responsive typography should reduce extremes rather than simply clamp a giant desktop scale.
+- Semantic heading level and visual size are related but not identical: preserve document semantics while styling according to the actual information hierarchy.
+
+When reviewing a page, compare the full scale as a system (`h1 → h2 → h3 → supporting copy → body → metadata`) rather than evaluating each size in isolation.
+
+## 5. Anti-AI preflight
 
 Read `references/ai-default-patterns.md` before finalizing substantial new visual structure.
 
@@ -69,13 +85,13 @@ Check for formulaic composition before implementation:
 
 One device may be justified. The default bundle is not.
 
-## Motif discipline
+## 6. Motif discipline
 
 Prefer a small, coherent visual vocabulary over many unrelated premium-UI effects.
 
 Choose which devices carry the identity: for example typography + composition + motion, or color + geometry + imagery. Do not automatically add every available device. Repetition should create a system, not expose a template.
 
-## Reference decomposition
+## 7. Reference decomposition
 
 When a visual reference or brand example is supplied, decompose it before borrowing from it:
 
@@ -91,7 +107,7 @@ When a visual reference or brand example is supplied, decompose it before borrow
 
 Extract transferable principles relevant to the task. Do not infer superficial motifs merely from a brand name. For example, “Apple-like” must not automatically mean giant type, glass, gradients, floating orbs or reveal animations.
 
-## Visual direction
+## 8. Visual direction
 
 Only after architecture is stable, derive typography, spacing, color, surfaces, depth, imagery and motion from product, audience, brand, task frequency, data density, references and the existing system.
 
@@ -99,7 +115,7 @@ Do not apply a universal “premium SaaS” style.
 
 Before adding a container, border, shadow, radius, gradient, pill, icon, eyebrow, accent, oversized type, CTA panel or animation, ask whether it communicates hierarchy, grouping, affordance, state, sequence, emphasis, elevation, continuity or brand character. If none apply, simplify.
 
-## Responsive architecture
+## 9. Responsive architecture
 
 Responsive design is not only wrapping columns. Decide what reorders, collapses, persists, becomes disclosure, changes density, or needs a different interaction at narrow/intermediate/wide sizes.
 
@@ -115,6 +131,7 @@ COMPONENT MODEL + PURPOSE
 ACTIONS / INTERACTIONS
 STATES
 RESPONSIVE TRANSFORMATION
+TYPOGRAPHIC HIERARCHY
 VISUAL DIRECTION + MOTIFS
 ANTI-AI RISKS TO AVOID
 ```
