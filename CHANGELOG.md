@@ -3,15 +3,15 @@
 ## 1.1.1 - 2026-10-01
 
 - Added editorial punctuation rules: headings/labels omit terminal periods by default; short display-support copy is distinguished from prose paragraphs.
-- Added proportional typographic hierarchy rules across page titles, section headings, component headings, supporting copy, body, labels and metadata.
+- Added proportional typographic hierarchy rules across primary titles, section/region headings, component headings, supporting copy, body, labels and metadata.
 - Added safeguards against oversized display typography, artificial hierarchy gaps and shrinking body text to exaggerate headings.
-- Added viewport and focal-hierarchy discipline: first-screen content must prioritize rather than cram every important module into one composition.
-- Added density checks for overloaded split heroes, competing high-complexity columns and layouts that only work on very tall/wide mockup canvases.
+- Added section/region focal-hierarchy discipline: each major region must establish clear first/second/third attention priorities instead of presenting several equally dominant elements.
+- Added density checks for overloaded split compositions, competing high-complexity modules and supporting content that competes with the region's main purpose.
 - Added restraint rules for decorative grid/dot/noise/gradient/glow backgrounds used as automatic “AI/tech” styling.
-- Added a focal-load test: identify first/second/third attention targets and simplify when multiple dominant elements compete simultaneously.
+- Added a focal-load test per major section/functional region; responsive states must preserve or deliberately remap that hierarchy.
 - Added ARIA intentionality guidance: prefer native semantics, avoid decorative ARIA, justify live regions and synchronize ARIA states with interaction state.
 - Added explicit SEO deferral rules for deployment-dependent metadata such as canonical URL, `og:url`, absolute social images, sitemap and `hreflang` targets.
-- Extended Visual QA and Quality Audit to verify typography, punctuation, viewport fit, density, background restraint, ARIA intent and explicit SEO dependencies.
+- Extended Visual QA and Quality Audit to verify typography, punctuation, region hierarchy, density, background restraint, ARIA intent and explicit SEO dependencies.
 
 ## 1.1.0 - 2026-10-01
 
