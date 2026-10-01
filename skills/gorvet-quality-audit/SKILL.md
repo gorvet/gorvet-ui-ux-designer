@@ -1,6 +1,6 @@
 ---
 name: gorvet-quality-audit
-description: Run a final cross-cutting audit of UI/UX work for generic AI design defaults, typographic/editorial drift, density/viewport problems, unnecessary complexity, design-system drift, duplicate components, hardcoded styling, accessibility risk, SEO applicability, and maintainability. Use as a completion gate for substantial new or redesigned interfaces and when refactoring AI-generated UI.
+description: Run a final cross-cutting audit of UI/UX work for generic AI design defaults, typographic/editorial drift, density/hierarchy problems, unnecessary complexity, design-system drift, duplicate components, hardcoded styling, accessibility risk, SEO applicability, and maintainability. Use as a completion gate for substantial new or redesigned interfaces and when refactoring AI-generated UI.
 license: MIT
 metadata:
   author: GORVET
@@ -22,19 +22,23 @@ Also check for “modern UI bundles”: multiple unrelated premium effects combi
 
 If generic AI-pattern accumulation materially weakens the design, do not merely report it. Restructure/simplify the affected areas before completion when editing capability exists.
 
-## 2. Composition, density and viewport gate
+## 2. Composition, focal hierarchy and density gate
 
-Check the page as a composition, not only as independent components.
+Check the interface as a composition, not only as independent components.
 
-- Identify the intended first, second and third attention targets in each major viewport. Several equally dominant elements competing simultaneously is a hierarchy defect.
-- Check realistic laptop viewport heights as well as widths. A hero that only feels complete on a tall design canvas should be revised.
-- Do not require the first viewport to contain headline, long copy, multiple CTAs, tags, metrics, a showcase panel and decorative background effects at once.
-- Flag high-complexity side-by-side modules when simultaneous viewing is not functionally useful.
-- Check that whitespace is allowed to separate hierarchy rather than being filled with another card, badge, illustration, metric or effect.
-- Decorative grid/dot/noise/gradient/glow backgrounds must remain subordinate to content and must not be used automatically to signal technology/AI.
-- Density must follow content/task needs rather than visual abundance.
+For every major section or functional region:
 
-If the first screen feels clipped, cramped, noisy or visually unresolved at a common target viewport, completion fails until hierarchy/density is corrected.
+- identify the intended first, second and third attention targets;
+- verify that several equally dominant elements are not competing simultaneously unless the task requires true side-by-side comparison;
+- verify that supporting tags, metrics, metadata, previews, diagrams, code samples or secondary actions visibly recede from the region's main purpose;
+- flag high-complexity side-by-side modules when simultaneous viewing is not functionally useful;
+- check that whitespace is allowed to separate hierarchy rather than being filled with another card, badge, illustration, metric or effect;
+- require decorative grid/dot/noise/gradient/glow backgrounds to remain subordinate to content and interaction;
+- ensure density follows content/task needs rather than visual abundance.
+
+Responsive states must preserve or deliberately re-map that priority. Do not keep every desktop element equally prominent simply because it fits.
+
+If a major region feels cramped, noisy, visually unresolved or lacks a clear focal order, completion fails until hierarchy/density is corrected.
 
 ## 3. Typography and editorial consistency
 
@@ -42,10 +46,10 @@ Treat typography as a system.
 
 Check:
 
-- coherent hierarchy across `h1`, `h2`, `h3`, supporting/subheading copy, body, labels and metadata;
+- coherent hierarchy across primary title, section/region headings, component headings, supporting/subheading copy, body, labels and metadata;
 - proportional scale without exaggerated display sizes or arbitrary jumps;
 - appropriate line-height, measure, weight and spacing, not font-size alone;
-- responsive type that preserves relationships instead of carrying oversized desktop scale into smaller viewports;
+- responsive type that preserves relationships instead of carrying oversized desktop scale into smaller spaces;
 - headings/titles that do not end in periods by default;
 - short display/supporting copy vs normal prose punctuation handled according to semantic role;
 - no body/supporting text made artificially small simply to exaggerate headline contrast.
@@ -68,7 +72,7 @@ Check for:
 
 Check task/content clarity, primary action, feedback, recovery, empty/error/loading states where relevant, avoidable steps, hidden frequent actions, and misleading disabled states.
 
-For content-led/public pages, also verify that the section/component architecture follows the information rather than a generic page template.
+For every interface, verify that region/component architecture follows the actual information and task relationships rather than a generic page, dashboard or component template.
 
 ## 6. Accessibility gate
 
