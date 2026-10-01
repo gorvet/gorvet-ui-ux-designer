@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gorvet-ui-ux-designer",
-  "version": "1.0.1",
-  "description": "Vendor-neutral GORVET skills for UI/UX design, frontend implementation, accessibility, SEO, visual QA, and production interface workflows.",
+  "version": "1.1.0",
+  "description": "Vendor-neutral GORVET skills for UI/UX architecture, frontend implementation, accessibility, SEO, visual QA, and anti-AI-style production workflows.",
   "author": {
     "name": "Gorvet Estudios",
     "url": "https://gorvet.com"
@@ -11,6 +11,7 @@
     "gorvet",
     "ui ux",
     "frontend",
+    "ui architecture",
     "design systems",
     "accessibility",
     "frontend seo",
@@ -20,12 +21,13 @@
     "com.openai": {
       "interface": {
         "displayName": "GORVET UI/UX Designer",
-        "shortDescription": "Diseño UI/UX y desarrollo frontend profesional con GORVET.",
-        "longDescription": "Suite modular de GORVET para diseñar, implementar y revisar interfaces de producción. Puede trabajar desde cero o sobre proyectos existentes, interpretar briefs, documentos de requisitos e imágenes de referencia, generar código frontend y aplicar arquitectura de información, usabilidad, sistemas de diseño, accesibilidad, SEO y control de calidad visual.",
+        "shortDescription": "Arquitectura UI/UX y desarrollo frontend profesional con GORVET.",
+        "longDescription": "Suite modular de GORVET para arquitectar, diseñar, implementar y revisar interfaces de producción. Infiere estructura y componentes desde la tarea y el contenido, evita patrones visuales genéricos de IA, interpreta briefs y referencias, genera código frontend y aplica accesibilidad, SEO, visual QA y auditoría final de calidad.",
         "developerName": "Gorvet Estudios",
         "category": "Productivity",
         "capabilities": [
           "ui-ux-design",
+          "ui-architecture",
           "frontend-engineering",
           "design-systems",
           "accessibility",
