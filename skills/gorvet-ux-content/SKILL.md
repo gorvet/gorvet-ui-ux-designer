@@ -1,6 +1,6 @@
 ---
 name: gorvet-ux-content
-description: Write and review interface labels, buttons, errors, empty states, success messages, onboarding, help text, notifications, and other UX microcopy. Use when wording affects comprehension, trust, action, or recovery.
+description: Write and review interface labels, buttons, headings, supporting copy, errors, empty states, success messages, onboarding, help text, notifications, and other UX microcopy. Use when wording, punctuation, hierarchy, trust, action, or recovery affect comprehension.
 license: MIT
 metadata:
   author: GORVET
@@ -21,6 +21,20 @@ Interface copy is part of interaction design.
 - Warnings describe consequence before irreversible action.
 - Success messages confirm what changed and what happens next.
 - Avoid fake urgency, vague reassurance, and generic “Something went wrong” when a specific cause/remedy is known.
+
+## Headings and punctuation
+
+Treat headings and display copy differently from prose.
+
+- Page/section/component headings (`h1`–`h6`) normally **do not end with a period**.
+- Eyebrows, kickers, section indexes, labels and short display fragments do not use terminal periods by default.
+- Question marks and exclamation marks are appropriate when they are semantically part of the heading. Colons, ellipses or other terminal punctuation require a deliberate editorial reason.
+- Do not add a period merely because a heading is grammatically a complete sentence.
+- A short supporting line that functions as display/subheading copy normally omits the final period when it is a single reinforcing statement.
+- Supporting copy that functions as normal prose — especially multiple sentences or a developed paragraph — uses standard sentence punctuation.
+- Do not infer punctuation from visual line count alone; line wrapping changes by viewport. Decide from the semantic role: display copy vs prose.
+
+Follow an explicit project/editorial style guide when it defines another convention.
 
 ## Tone
 
