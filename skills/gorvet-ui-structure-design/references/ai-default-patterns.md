@@ -14,7 +14,17 @@ These are **signals to inspect**, not universal bans. A pattern is acceptable wh
 - repeating the same section anatomy everywhere, especially `eyebrow → large heading → subtitle/paragraph → content`;
 - treating every important CTA as a separate promotional panel/card instead of integrating it naturally into the information flow;
 - oversized CTA bands or callout boxes used as a default ending for sections/pages;
-- repeatedly separating content into visually isolated blocks when whitespace and hierarchy would be enough.
+- repeatedly separating content into visually isolated blocks when whitespace and hierarchy would be enough;
+- overloaded split heroes that place a dense text stack beside an equally dense showcase/code/diagram card without a real comparison need;
+- forcing every important message, CTA, metric, tag and visual into the first viewport.
+
+## Density and viewport
+- first-screen compositions where headline, paragraph, CTAs, chips, metrics and a showcase panel all compete for attention;
+- heroes that feel clipped or overcrowded at common laptop heights;
+- filling every horizontal column or empty region because whitespace is treated as wasted space;
+- multiple high-complexity modules placed side by side with no dominant focal area;
+- content density chosen for visual abundance rather than task/content needs;
+- layouts tuned only for very wide/tall mockup canvases instead of realistic viewport ranges.
 
 ## Surfaces and decoration
 - the same large radius everywhere;
@@ -25,7 +35,9 @@ These are **signals to inspect**, not universal bans. A pattern is acceptable wh
 - gradient blobs or gradient text used as automatic personality;
 - glow used as filler;
 - pills used for ordinary labels/actions without semantic reason;
-- colored/tinted section backgrounds added mainly to create visual variety rather than communicate grouping or state.
+- colored/tinted section backgrounds added mainly to create visual variety rather than communicate grouping or state;
+- grid, dot-matrix, noise, technical-line or blueprint-style backgrounds used automatically to signal “AI”, “developer” or “modern”;
+- multiple background effects (gradient + grid + glow + noise) competing with the actual content.
 
 ## Content and section framing
 - invented metrics, testimonials, activity, or metadata;
@@ -38,9 +50,11 @@ These are **signals to inspect**, not universal bans. A pattern is acceptable wh
 - redundant intro copy whose only purpose is to fill the canonical section-header pattern.
 
 ## Typography
-- huge headings that reduce task density;
+- huge headings that reduce task density or dominate most of the viewport without narrative reason;
+- exaggerated jumps between display headings and body/supporting text;
+- shrinking supporting/body text to make headings appear more dramatic;
 - all-caps/tracked labels everywhere;
-- treating small uppercase blue/brand-colored eyebrows as a mandatory visual signature across the whole page;
+- treating small uppercase brand-colored eyebrows as a mandatory visual signature across the whole page;
 - monospace metadata without a product reason;
 - one highlighted/gradient/italic headline word as a default motif;
 - the same generic type treatment regardless of product context.
@@ -54,8 +68,9 @@ These are **signals to inspect**, not universal bans. A pattern is acceptable wh
 
 ## Interaction
 - modal for every detail/edit flow;
-- `hover: scale(...)` on everything;
-- decorative micro-animation without feedback or continuity value;
+- `hover: scale(...)` or hover-lift on every card;
+- reveal-on-scroll attached to nearly every section merely to make the page feel dynamic;
+- decorative micro-animation without feedback, continuity or narrative value;
 - hiding common actions inside menus merely to look clean.
 
 ## Implementation
@@ -70,6 +85,11 @@ These are **signals to inspect**, not universal bans. A pattern is acceptable wh
 When reviewing a page, ignore the copy and compare section silhouettes. If many sections reduce to the same header stack, same rounded container, same card grid, and same CTA treatment, the layout is probably being driven by a template rather than by content semantics.
 
 Vary structure only when the content relationship changes; do not vary it merely for novelty. Conversely, do not force unrelated content into the same composition merely for visual consistency.
+
+## Focal-load test
+At each major viewport, identify the intended first, second and third attention targets. If several large/high-contrast elements demand equal attention simultaneously, simplify, sequence or reduce one of them.
+
+The first viewport does not need to contain the whole argument. Prioritize comprehension over visual abundance.
 
 ## Accumulation rule
 One signal does not make an interface generic. Multiple unrelated defaults appearing together without product justification indicate design convergence and should trigger revision.
