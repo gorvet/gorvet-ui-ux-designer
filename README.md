@@ -33,6 +33,7 @@ See [docs/PIPELINE.md](docs/PIPELINE.md).
 | `gorvet-project-context` | Reads project specs, references, stack, components, tokens, screenshots, and constraints. |
 | `gorvet-information-architecture` | Navigation, hierarchy, taxonomy, search, filtering, labels, and wayfinding. |
 | `gorvet-ux-usability` | Task flow, affordances, feedback, error prevention, cognitive load, and recovery. |
+| `gorvet-ux-research-testing` | Lightweight discovery and usability testing when product decisions lack evidence. |
 | `gorvet-ui-structure-design` | Greyboxing, hierarchy, composition, density, visual direction, anti-AI defaults. |
 | `gorvet-design-system` | Tokens, primitives, components, variants, responsive contracts, and system consistency. |
 | `gorvet-interaction-patterns` | Pattern selection and behavior for dialogs, drawers, tabs, tables, menus, disclosure, feedback, etc. |
