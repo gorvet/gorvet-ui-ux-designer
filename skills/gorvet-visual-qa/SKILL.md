@@ -1,6 +1,6 @@
 ---
 name: gorvet-visual-qa
-description: Perform visual and responsive QA on implemented interfaces using rendered pages, screenshots, or static code evidence. Use after UI implementation or when diagnosing an existing screen; verifies hierarchy, spacing, states, references, responsiveness, accessibility smoke checks, and visible AI-template defects.
+description: Perform visual and responsive QA on implemented interfaces using rendered pages, screenshots, or static code evidence. Use after UI implementation or when diagnosing an existing screen; verifies hierarchy, typography, spacing, states, references, responsiveness, accessibility smoke checks, and visible AI-template defects.
 license: MIT
 metadata:
   author: GORVET
@@ -25,7 +25,10 @@ State what could not be visually verified. Never pretend static code review is r
 - primary hierarchy and action prominence;
 - grouping/proximity/alignment;
 - density and scanability;
-- typography and content measure;
+- typography hierarchy, content measure and readable line-height;
+- proportional relationships across page title, section headings, component headings, supporting copy, body and metadata;
+- oversized display type that consumes disproportionate viewport space or creates an artificial hierarchy gap;
+- heading/supporting-copy punctuation that conflicts with their editorial role;
 - surface/border/shadow/radius consistency;
 - section/component silhouette repetition that exposes a generic template;
 - unnecessary decorative completion: icons, pills, badges, metrics, cards, blobs, gradients or dividers that do not add meaning;
@@ -33,9 +36,16 @@ State what could not be visually verified. Never pretend static code review is r
 - empty/loading/error/disabled/selected/success states where relevant;
 - mobile/narrow, intermediate and wide behavior relevant to the product;
 - keyboard focus visibility and obvious accessibility regressions;
+- suspicious ARIA on generic containers, redundant accessible names, or live regions tied to decorative/passive changes;
 - comparison with project references/specification when supplied;
 - whether reference principles were transferred rather than superficial brand motifs copied;
 - visual evidence of hardcoded drift or duplicate component styling.
+
+## Typography pass
+
+Read the type system as a scale, not as isolated sizes. Confirm that semantic levels are distinguishable without exaggerated jumps, that body/supporting text has not been shrunk merely to make headings feel larger, and that responsive sizes remain proportionate.
+
+Headings normally should not end in periods unless the project style guide or message intentionally requires punctuation. Treat short display subcopy differently from prose paragraphs.
 
 ## Anti-template visual pass
 
