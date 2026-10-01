@@ -2,37 +2,38 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gorvet-ui-ux-designer",
   "version": "1.0.1",
-  "description": "Vendor-neutral UI/UX design and frontend engineering skills for planning, building, and reviewing production interfaces.",
+  "description": "Vendor-neutral GORVET skills for UI/UX design, frontend implementation, accessibility, SEO, visual QA, and production interface workflows.",
   "author": {
     "name": "Gorvet Estudios",
-    "url": "https://www.gorvet.com"
+    "url": "https://gorvet.com"
   },
-  "homepage": "https://github.com/gorvet/gorvet-ui-ux-designer",
-  "repository": "https://github.com/gorvet/gorvet-ui-ux-designer",
-  "license": "MIT",
   "keywords": [
-    "ui",
-    "ux",
+    "gorvet",
+    "ui ux",
     "frontend",
-    "design-system",
+    "design systems",
     "accessibility",
-    "seo",
-    "agent-skills"
+    "frontend seo",
+    "visual qa"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "GORVET UI/UX Designer",
-        "shortDescription": "UI/UX design and frontend engineering skills",
-        "longDescription": "A modular UI/UX and frontend engineering system that reads project requirements and references, selects only the specialist skills needed, generates or improves frontend code, and reviews the result for usability, accessibility, SEO and visual quality.",
+        "shortDescription": "Diseño UI/UX y desarrollo frontend profesional con GORVET.",
+        "longDescription": "Suite modular de GORVET para diseñar, implementar y revisar interfaces de producción. Puede trabajar desde cero o sobre proyectos existentes, interpretar briefs, documentos de requisitos e imágenes de referencia, generar código frontend y aplicar arquitectura de información, usabilidad, sistemas de diseño, accesibilidad, SEO y control de calidad visual.",
         "developerName": "Gorvet Estudios",
         "category": "Productivity",
-        "capabilities": ["Interactive"],
-        "defaultPrompt": [
-          "Create a responsive landing page from my brief and references.",
-          "Review and improve this interface while preserving the existing stack and design system.",
-          "Build this frontend from the project requirements I provide."
-        ]
+        "capabilities": [
+          "ui-ux-design",
+          "frontend-engineering",
+          "design-systems",
+          "accessibility",
+          "frontend-seo",
+          "visual-qa"
+        ],
+        "websiteURL": "https://gorvet.com",
+        "defaultPrompt": "Ayúdame a diseñar y construir esta interfaz usando GORVET UI/UX Designer."
       }
     }
   }
