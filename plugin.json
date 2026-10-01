@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gorvet-ui-ux-designer",
+  "version": "1.0.1",
+  "description": "Vendor-neutral UI/UX design and frontend engineering skills for planning, building, and reviewing production interfaces.",
+  "author": {
+    "name": "Gorvet Estudios",
+    "url": "https://www.gorvet.com"
+  },
+  "homepage": "https://github.com/gorvet/gorvet-ui-ux-designer",
+  "repository": "https://github.com/gorvet/gorvet-ui-ux-designer",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "frontend",
+    "design-system",
+    "accessibility",
+    "seo",
+    "agent-skills"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GORVET UI/UX Designer",
+        "shortDescription": "UI/UX design and frontend engineering skills",
+        "longDescription": "A modular UI/UX and frontend engineering system that reads project requirements and references, selects only the specialist skills needed, generates or improves frontend code, and reviews the result for usability, accessibility, SEO and visual quality.",
+        "developerName": "Gorvet Estudios",
+        "category": "Productivity",
+        "capabilities": ["Interactive"],
+        "defaultPrompt": [
+          "Create a responsive landing page from my brief and references.",
+          "Review and improve this interface while preserving the existing stack and design system.",
+          "Build this frontend from the project requirements I provide."
+        ]
+      }
+    }
+  }
+}
