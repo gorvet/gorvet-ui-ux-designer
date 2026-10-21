@@ -1,6 +1,6 @@
 ---
 name: gorvet-ui-pipeline
-description: Coordinate the GORVET UI/UX Designer pipeline across any frontend stack. Use for new interfaces, redesigns, frontend implementation, UI reviews, or substantial UX work; routes only the specialist skills needed for Context → Design → Build → Review while enforcing required quality gates.
+description: Coordinate the GORVET UI/UX Designer pipeline across frontend stacks and editable design tools. Use for new interfaces, redesigns, frontend implementation, editable designs, UI reviews, or substantial UX work; routes only the specialists needed for Context → Design → Build → Review.
 license: MIT
 metadata:
   author: GORVET
@@ -14,7 +14,7 @@ Use the shortest professional path that produces a reliable result. Specialist c
 
 1. **Context** — understand task, users, surface, project specification, references, existing UI, stack, tokens, components, constraints, and optional adapters.
 2. **Design** — resolve interface architecture first, then invoke only the specialist skills whose decision domains are present.
-3. **Build** — implement using the existing/requested stack and design system before creating new primitives.
+3. **Build** — materialize the design as functional frontend or editable design using the requested destination and existing system before creating new primitives.
 4. **Review** — inspect the resulting interface using the strongest evidence available, run the final quality gate, fix material defects when possible, then deliver.
 
 ## Context classification
@@ -26,7 +26,8 @@ Determine enough context to route correctly without creating bureaucracy:
 - public/indexable vs private/non-indexable when relevant;
 - content/task complexity;
 - requested/detected stack and existing system;
-- supplied references and what they are meant to influence.
+- supplied references and what they are meant to influence;
+- deliverable mode (functional frontend, editable design, or review only) and destination capabilities.
 
 Ask only when missing information materially changes the solution.
 
@@ -48,7 +49,7 @@ Then use other specialists only when their domains are present:
 - labels/errors/microcopy/content clarity → `gorvet-ux-content`
 - accessibility/inclusive behavior → `gorvet-accessibility`
 - public/indexable search discoverability → `gorvet-frontend-seo`
-- code implementation → `gorvet-ui-implementation`
+- functional frontend or editable design construction → `gorvet-ui-implementation`
 - rendered/static visual result → `gorvet-visual-qa`
 - final cross-cutting gate → `gorvet-quality-audit`
 
@@ -75,6 +76,7 @@ Do not ban individual devices such as cards, gradients, pills, large type, glass
 - New screen in established product: Context → UI architecture + relevant Design specialists → Build → Review.
 - New product/system: Context → UI architecture + relevant IA/usability/system/accessibility (+ other specialists) → Build → Review.
 - Existing weak UI: Context → QA/Audit → targeted Design → Build → Review.
+- Review only: Context → Review; report findings and proposed corrections without editing or requiring a new design contract.
 
 These are examples, not page-type triggers. Infer the needed specialists from the actual decision domains.
 
@@ -88,6 +90,16 @@ Pass decisions, not essays. Keep working context compact:
 - Review: evidence level, defects found, corrections made, anything not verified.
 
 Create persistent documentation only when it prevents future rediscovery. Do not require a document for each stage.
+
+### Design contract
+
+The Design handoff is the design contract, not an additional document or stage. The pipeline owns its assembly and scope; `gorvet-ui-structure-design` supplies architecture/visual decisions and the preflight, other specialists contribute only applicable decisions, and `gorvet-design-system` owns system mappings. Build consumes this same record; Review compares against it rather than reconstructing intent from the result.
+
+For substantial new/redesigned UI or a transfer to another executor, consolidate concrete decisions before construction: intended deliverable and scope, the structure-design handoff, applicable system mappings, and observable acceptance conditions for the important regions/states/viewports. Identify what must be preserved, what the executor may resolve locally, and genuine unresolved dependencies. Use existing decisions by reference; do not repeat specialist checklists or require every heading to be filled.
+
+For a small established change, the request plus the existing system and a brief statement of the affected behavior is sufficient. Do not create a separate contract, full preflight or library mapping. Escalate only if the change introduces material design decisions.
+
+GORVET governs UX/UI intent; destination skills and tools govern mandatory technical execution. If a capability/technical constraint conflicts with a design decision, revisit only that decision in Design and record the agreed adjustment before continuing. Never silently substitute the executor's default composition or rewrite the contract retrospectively to make a deviation pass. Approval follows the user's existing instructions; this contract does not introduce an approval ceremony.
 
 ## Observable execution gates
 

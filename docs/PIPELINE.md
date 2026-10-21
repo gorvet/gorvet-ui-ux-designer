@@ -28,7 +28,7 @@ Then select only the other specialists needed:
 - `gorvet-accessibility`
 - `gorvet-frontend-seo` for public/indexable surfaces
 
-The design stage resolves decisions before code. It does not require lengthy paperwork.
+The design stage resolves decisions before frontend code or editable design construction. It does not require lengthy paperwork. The existing handoff is the [design contract](../skills/gorvet-ui-pipeline/SKILL.md#design-contract); the pipeline defines its scope, ownership, proportionality and change rule. Specialist outputs feed that same record.
 
 ### Execution evidence
 
@@ -53,7 +53,7 @@ Before implementation, substantial new visual structure must pass the preflight 
 
 ## 3. Build
 
-`gorvet-ui-implementation` implements using the detected/requested stack.
+`gorvet-ui-implementation` consumes the contract using either functional frontend modes or its editable-design mode. Consult its [Build entry and destination rules](../skills/gorvet-ui-implementation/SKILL.md#shared-build-entry) and the [system mapping rules](../skills/gorvet-design-system/SKILL.md#destination-mapping). Mandatory destination contracts govern technical execution; GORVET retains UX/UI direction.
 
 Priority:
 
@@ -71,6 +71,8 @@ If compatible framework-specific skills are available, use them as adapters for 
 ## 4. Review
 
 `gorvet-visual-qa` inspects the result using the strongest evidence available: rendered UI/browser first, screenshots second, static code as fallback.
+
+It checks [contract conformance](../skills/gorvet-visual-qa/SKILL.md#contract-conformance) separately from visual quality. The final audit owns [deviation severity and disposition](../skills/gorvet-quality-audit/SKILL.md#contract-deviations). Editable outputs need native-structure evidence for editability/bindings; rendered frames alone do not prove runtime behavior.
 
 `gorvet-quality-audit` is the final cross-cutting completion gate for substantial new/redesigned UI. It checks generic AI-style accumulation, architecture, system discipline, UX, accessibility, SEO applicability and maintainability. When editing capability exists, material blockers/major defects should be corrected before delivery and re-checked once.
 
@@ -110,6 +112,10 @@ Context → UI Architecture + relevant IA/usability/system/accessibility (+ SEO 
 
 ### Existing poor UI
 Context → Visual QA/Quality Audit → targeted Design → Build → Review.
+
+### Review only
+
+Context → Review. Report findings and proposed corrections without editing. Use an existing contract when available; do not require or invent a historical design contract. A remediation verdict does not authorize implementation.
 
 ### Form-heavy flow
 Context → UI Architecture + Forms + Accessibility + UX Content + Interaction → Build → Review.

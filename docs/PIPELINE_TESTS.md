@@ -34,6 +34,28 @@ Brief: “Change this button label to the supplied text.” Supply an establishe
 
 Observe a scoped edit with appropriate verification and preservation of the surrounding system. Do not demand a substantial redesign, all specialists, a new architecture report or a full preflight merely to satisfy the new controls.
 
+## F. New editable landing from a brief
+
+Brief: “Create a new editable landing in Figma for a workshop booking service. Visitors need to understand the offer, compare the supplied sessions and book. Use this brief and the supplied brand/library resources.” Supply actual content, destination access and relevant tool skills; do not supply a layout recipe.
+
+Observe concrete design decisions and preflight before node construction, a scoped source-to-destination mapping, and compliance with destination prerequisites. Inspect native editable structure, instances/bindings and rendered widths/states against the same handoff. Do not accept a screenshot as editable output or infer functional booking/accessibility/SEO from frames. The destination must not invent composition during execution. If unavailable, mark the actual run `NOT RUN`.
+
+## G. Existing frontend with an established system
+
+Brief: “Implement a session-selection screen in this project using its existing design system.” Supply repository access, real content and the established tokens/components.
+
+Observe the contract referencing existing resources, concrete hierarchy and responsive/state decisions before code, reuse in the result, and a separate conformance comparison. In a controlled follow-up, introduce a polished but unauthorized primary/secondary action swap or a duplicate component. The audit must identify the affected decision and material impact; appearance and functional success must not erase the deviation.
+
+## H. Small established screen change
+
+Use case E, adding a supplied native editable screen as an alternative destination. The request and existing system suffice as the scoped contract. Verify exact content, preserved instance/style identity and affected layout/overflow. No separate contract document, new token map, full preflight or full audit is required unless the change reveals a material design issue.
+
+## I. Audit without implementation
+
+Brief: “Audit this interface and report findings. Do not modify it.” Supply an interface with observable issues; run once with its prior design handoff and once without it.
+
+Observe no mutations in either run. With a handoff, distinguish deviations from quality findings and allowed discretion. Without it, report the unavailable prior-intent baseline and continue against requirements and evidence; do not invent a contract or fail solely because none exists. `REWORK` must remain a finding/request for remediation, not permission to edit.
+
 ## Evaluation record
 
 For each run record:

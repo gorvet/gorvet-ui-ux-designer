@@ -1,6 +1,6 @@
 ---
 name: gorvet-quality-audit
-description: Run a final cross-cutting audit of UI/UX work for generic AI design defaults, typographic/editorial drift, density/hierarchy problems, unnecessary complexity, design-system drift, duplicate components, hardcoded styling, accessibility risk, SEO applicability, and maintainability. Use as a completion gate for substantial new or redesigned interfaces and when refactoring AI-generated UI.
+description: Audit UI/UX quality and design-contract deviations for frontend interfaces and editable designs, covering anti-AI patterns, hierarchy, system discipline, accessibility, SEO applicability and maintainability. Use as a completion gate for substantial new/redesigned UI or for review-only diagnosis.
 license: MIT
 metadata:
   author: GORVET
@@ -9,6 +9,19 @@ metadata:
 # UI Quality Audit
 
 Audit by impact, not by number of findings. For substantial new/redesigned UI, this is a completion gate, not optional polish.
+
+## Contract deviations
+
+Use the contract-conformance evidence from `gorvet-visual-qa` alongside the independent quality findings below; do not duplicate its inspection checklist. Compare against the pre-Build decisions and recorded Design adjustments, never a baseline reconstructed to fit the result. For each deviation record the affected decision/region, evidence, impact, severity and disposition. Missing evidence is distinct from an observed mismatch.
+
+- **BLOCKER:** breaks the core task, a critical applicable requirement or the requested deliverable (for example a flattened image instead of an editable design).
+- **MAJOR:** materially changes agreed hierarchy, composition, responsive behavior or system reuse/identity, even if the result looks polished.
+- **MODERATE:** localized discrepancy with limited task/system impact; correct within scope or explicitly disclose the remaining deviation and impact.
+- **OPTIONAL POLISH:** discretionary refinement within permitted freedom; it is not a contract failure.
+
+For blockers/major deviations, restore the decision or return the affected issue to Design for an explicit justified adjustment under the pipeline's change rule, then re-check conformance and visual quality. Do not waive a mismatch merely because the executor prefers its result. A faithful implementation of a flawed design still needs the applicable quality corrections.
+
+In review-only work, report verdict and proposed corrections without editing or starting Build. If no contract exists, state that conformance to prior design intent is unavailable and audit against supplied requirements and quality evidence; absence of a historical contract alone does not fail a standalone audit. Do not create or approve one retrospectively. In editable-design work, assess represented appearance and native structure while leaving runtime-only claims outside the deliverable or unverified when requested.
 
 ## 1. Intentionality and anti-AI gate
 
@@ -20,7 +33,7 @@ Run the repetition test: mentally ignore the copy and compare the silhouettes of
 
 Also check for “modern UI bundles”: multiple unrelated premium effects combined by default rather than by a coherent visual language.
 
-If generic AI-pattern accumulation materially weakens the design, do not merely report it. Restructure/simplify the affected areas before completion when editing capability exists.
+If generic AI-pattern accumulation materially weakens the design, restructure/simplify the affected areas before completion when editing is authorized and possible; for review-only work report the necessary correction.
 
 ## 2. Composition, focal hierarchy and density gate
 
@@ -94,6 +107,8 @@ For private/admin UI, do not create unnecessary SEO work.
 
 Prefer to fix blockers and major issues before delivery, then re-check the affected areas once. Avoid endless polishing loops.
 
+Correction instructions apply only within authorized implementation/remediation scope. A review-only `REWORK` verdict requests remediation; it does not authorize it.
+
 If the runtime cannot edit or render, state the limitation and return the highest-confidence audit possible from available evidence.
 
 ## Output
@@ -104,6 +119,7 @@ Always record a concise final verdict for substantial new/redesigned UI, includi
 VERDICT: PASS | REWORK | UNVERIFIED
 SCOPE / EVIDENCE: actual regions, states, viewports and evidence inspected
 COMPOSITION: concrete repetition, focal-hierarchy and reference-transfer observations
+CONFORMANCE: decisions checked, deviations/dispositions, or unavailable prior baseline
 FINDINGS / CORRECTIONS: severity, affected element, fix and re-check result
 LIMITS / DEFERRALS: unverified applicable domains and missing dependencies, or none
 ```

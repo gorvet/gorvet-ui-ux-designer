@@ -1,6 +1,6 @@
 ---
 name: gorvet-visual-qa
-description: Perform visual and responsive QA on implemented interfaces using rendered pages, screenshots, or static code evidence. Use after UI implementation or when diagnosing an existing screen; verifies hierarchy, typography, density, spacing, states, references, responsiveness, accessibility smoke checks, and visible AI-template defects.
+description: Verify design-contract conformance separately from visual and responsive quality in frontend interfaces and editable designs. Use after construction or when diagnosing an existing screen, with rendered, native-structure or static evidence and explicit verification limits.
 license: MIT
 metadata:
   author: GORVET
@@ -18,7 +18,17 @@ Use the strongest available evidence:
 2. supplied screenshots at relevant states/viewports;
 3. static markup/styles/components as a fallback.
 
+For editable designs, inspect rendered frames at represented widths/states and native nodes/bindings where available. Frames establish visual appearance, not runtime semantics, automatic responsiveness or working interactions.
+
 State what could not be visually verified. Never pretend static code review is rendered QA.
+
+## Contract conformance
+
+Before the visual-quality pass below, compare the result against the applicable [pipeline design contract](../gorvet-ui-pipeline/SKILL.md#design-contract), including recorded Design adjustments. Reuse its region names and system mappings. Check fixed decisions and acceptance conditions for structure/order, hierarchy, component/variant use, visual treatment, states and responsive transformation; evaluate only the scope that applies. Do not treat permitted executor discretion as drift.
+
+Record each material mismatch as expected decision → observed result → artifact/region/state/width and evidence. Distinguish conforming, deviating and unverified decisions. Screenshots can show appearance but cannot establish token bindings or editable component identity; inspect the native structure/code for those claims.
+
+Keep conformance separate from visual quality: a faithful result can still have quality defects, and an attractive result can violate the contract. Pass both observations to `gorvet-quality-audit`, which owns severity and correction disposition. For review-only work without a prior contract, use supplied requirements as the baseline, mark missing design intent as unavailable and continue the quality review; do not invent retrospective approval or demand a new contract.
 
 ## Inspect
 
@@ -69,6 +79,8 @@ Also inspect whether “modernity” is being manufactured by stacking effects s
 ## Iteration
 
 Fix high-impact visible defects, re-render/reinspect when possible, and avoid endless polish loops. Prioritize task/content clarity, accessibility, responsive correctness, architecture and system consistency before decorative refinement.
+
+Apply corrections only within the authorized task scope. In review-only work, report findings and recommended corrections without editing.
 
 Use `gorvet-quality-audit` as the final completion gate for substantial new/redesigned UI.
 

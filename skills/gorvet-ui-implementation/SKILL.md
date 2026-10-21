@@ -1,6 +1,6 @@
 ---
 name: gorvet-ui-implementation
-description: Implement approved UI/UX decisions in any requested or detected frontend stack while preserving existing architecture, tokens, components, utilities, semantics, and optional framework-specific adapters. Use for production frontend coding in new frontends or existing projects.
+description: Materialize approved UI/UX decisions as functional frontend or editable designs in external tools, preserving existing architecture, tokens, components, variants and mandatory destination contracts. Use for frontend coding or construction of editable interfaces.
 license: MIT
 metadata:
   author: GORVET
@@ -8,7 +8,13 @@ metadata:
 
 # UI Implementation
 
-Support both existing projects and new frontends. Do not invent a framework when the user already requested a stack or when plain HTML/CSS/JS is sufficient.
+Support existing projects, new frontends and editable designs. For code outputs, do not invent a framework when the user already requested a stack or when plain HTML/CSS/JS is sufficient.
+
+## Shared Build entry
+
+Consume the [pipeline design contract](../gorvet-ui-pipeline/SKILL.md#design-contract) at the depth appropriate to the task. For substantial new/redesigned UI, require the structure-design decisions and `PASS` preflight before construction; if absent, return to the affected Design work. Loading skills or receiving brand names does not satisfy this gate. Resolve material ambiguities before building the affected region. Local technical choices may use the discretion recorded in the contract; material design changes return to Design under the pipeline's change rule.
+
+Choose the requested deliverable mode. An editable design is a design artifact; functional semantics, runtime behavior and deployed SEO cannot be claimed from a canvas or prototype. A screenshot alone does not satisfy an editable deliverable.
 
 ## Mode A — Existing project
 
@@ -28,9 +34,15 @@ When no existing project/system exists:
 
 Examples: a requested HTML + Bootstrap + JS landing should remain HTML + Bootstrap + JS; a plain static page does not need React merely because the runtime can generate it.
 
-For substantial new/redesigned UI, require the architecture decision handoff and `PASS` preflight from `gorvet-ui-structure-design` before implementation. If they are missing, resolve that design work first; loading the skill or receiving brand names does not satisfy the gate. If implementation changes the approved composition materially, re-check the affected design decisions before continuing.
-
 Common technologies such as Bootstrap, Tailwind, Angular Material, shadcn, CSS/SCSS, React/Vue/Angular/Svelte, server templates, and plain HTML/CSS/JS do **not** require an adapter. Work with them directly.
+
+## Mode C — Editable design
+
+Inspect the destination file, library, frames, components and capabilities. Read and follow applicable destination skills and mandatory tool contracts before using their APIs. Tools may require their own foundation or construction order; satisfy it while preserving GORVET's design decisions. No particular vendor or adapter is required by GORVET.
+
+Build native editable structure with supported layout/resizing mechanisms, component instances, variants and token/style bindings using the mapping supplied by `gorvet-design-system`. Preserve the agreed hierarchy, content, visual treatment, states and responsive transformations. Represent relevant widths/states with frames or prototypes as supported; do not imply automatic responsive behavior or functional interactions that the tool cannot provide.
+
+Hand Review the resulting artifact/frame/component references, represented states/widths, applied mappings and any resolved adjustments or remaining capability limits. Frontend-specific rules below apply to code outputs; equivalent system/reuse principles apply to editable designs.
 
 ## Reuse hierarchy
 

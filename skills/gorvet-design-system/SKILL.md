@@ -1,6 +1,6 @@
 ---
 name: gorvet-design-system
-description: Create, audit, or extend frontend design systems with semantic tokens, primitives, components, variants, responsive contracts, states, and maintainable CSS/component architecture. Use when consistency and reuse span more than one isolated screen.
+description: Create, audit, extend, or map design systems across frontend and editable design tools, preserving semantic tokens, components, variants, states, and responsive contracts. Use when consistency and reuse span more than one isolated screen or when transferring a system between destinations.
 license: MIT
 metadata:
   author: GORVET
@@ -40,6 +40,14 @@ A reusable component needs:
 - implementation guidance and realistic examples.
 
 Prefer fewer well-defined variants over near-duplicates.
+
+## Destination mapping
+
+Inspect the authoritative system and the destination's existing library before creating anything. For the slice actually used, contribute a compact source → destination mapping to the [pipeline design contract](../gorvet-ui-pipeline/SKILL.md#design-contract): semantic token/component identity, existing destination reference, relevant variant/state or mode, and any capability gap. A short note or existing library references suffice; do not inventory the whole system.
+
+Preserve semantic meaning, aliases, themes/modes and variant/state relationships using the destination's supported mechanisms (for example variables/styles and component instances in an editable tool, or tokens and component props in code). Reuse and bind existing resources before creating equivalents. Different names may map to the same meaning; identical names alone do not prove equivalence. Do not detach instances, flatten variants or duplicate tokens merely to simplify construction.
+
+If no equivalent exists, define only the missing reusable slice and retain its source relationship. If a required binding/state cannot be represented, record the fallback and its limit for Design to resolve and Review to verify; do not claim unsupported fidelity. The destination's mandatory technical contracts determine how resources are created and bound. A local label/content change using established resources needs no mapping artifact.
 
 ## CSS/frontend architecture
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.3 - 2026-10-21
+
+- Reinforced the existing Design handoff as a proportional design contract consumed by Build and checked by Review.
+- Added editable-design construction alongside functional frontend implementation, preserving mandatory destination contracts.
+- Added scoped source-to-destination token/component/variant mapping and reuse rules.
+- Separated contract conformance from visual quality, with deviation severity and correction criteria.
+- Clarified review-only scope and preserved the lightweight path for small established changes.
+- Added four behavioral evaluation briefs and a documented instruction-level walkthrough with explicit live-testing limits.
+
 ## 1.1.2 - 2026-10-01
 
 - Added observable decision/evidence handoffs at Context → Design, Design → Build and Review → Delivery; loading instructions no longer counts as gate execution.

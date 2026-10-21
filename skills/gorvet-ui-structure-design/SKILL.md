@@ -154,6 +154,8 @@ Responsive design is not only wrapping columns. Decide what reorders, collapses,
 
 Keep it implementation-ready and concise:
 
+Contribute these decisions to the [pipeline design contract](../gorvet-ui-pipeline/SKILL.md#design-contract); this is the same handoff, not a second specification. Include only relevant decisions. Give major regions stable names so Build and Review can refer to them. Resolve composition and visual direction before construction, regardless of whether the executor writes code or builds editable nodes.
+
 ```text
 INTENT
 STRUCTURE / REGIONS
@@ -169,3 +171,5 @@ ANTI-AI RISKS TO AVOID
 ```
 
 Avoid arbitrary pixels when the project already has a token/utility system.
+
+Make the decisions actionable: specify reading/focal order, component purpose, type roles and treatment, layout relationships and responsive changes, using system references or concrete constraints where they matter. For example, “narrow: summary precedes form; secondary details collapse; primary action remains visible” transfers a decision; “make it responsive” does not. State which choices are fixed and which details may adapt within these constraints. Refer token/component mapping to `gorvet-design-system` rather than defining a second system here.
