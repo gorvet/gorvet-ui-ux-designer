@@ -146,6 +146,8 @@ This repository follows the open Agent Skills directory format. Install individu
 
 For ChatGPT-compatible plugin installation, the repository includes `plugin.json` at the root so the same repository/ZIP can act as the plugin source. Other runtimes can ignore that manifest and consume `skills/` directly.
 
+For an existing ChatGPT web installation, ask: **“Update my existing GORVET UI/UX Designer plugin from its official GitHub release.”** The [update procedure](docs/UPDATING.md) uses a versioned ZIP and checksum from [the latest stable release](https://github.com/gorvet/gorvet-ui-ux-designer/releases/latest), then the host's supported plugin-update capability. Downloading a package alone does not change an installation. The maintenance skill `gorvet-plugin-update` is separate from the four-stage UI pipeline.
+
 ## Validation
 
 Run:

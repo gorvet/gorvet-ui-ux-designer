@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.4 - 2026-10-21
+
+- Added validated, reproducible GitHub release ZIPs with versioned download metadata and SHA-256 checksums.
+- Added an explicit plugin-update skill for updating the existing eligible ChatGPT account plugin from the repository release.
+- Added package integrity checks, release regression tests and web-update instructions; downloading alone does not install an update.
+
 ## 1.1.3 - 2026-10-21
 
 - Reinforced the existing Design handoff as a proportional design contract consumed by Build and checked by Review.

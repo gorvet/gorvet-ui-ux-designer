@@ -7,6 +7,7 @@ This directory documents the GORVET UI/UX Designer system itself. Users do not n
 - [`PIPELINE.md`](PIPELINE.md) — detailed behavior of the adaptive Context → Design → Build → Review pipeline and routing examples.
 - [`PROJECT_INPUTS.md`](PROJECT_INPUTS.md) — how GORVET consumes external project requirements, software architecture documents, colors/tokens, screenshots, visual references, and other evidence supplied in chat or stored in the target project.
 - [`ADAPTERS.md`](ADAPTERS.md) — contract for optional framework/project-specific skills such as GFrame adapters.
+- [`UPDATING.md`](UPDATING.md) — versioned GitHub packages and updating an existing ChatGPT account plugin.
 
 ## Where project-specific documentation belongs
 
