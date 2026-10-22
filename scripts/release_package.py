@@ -74,7 +74,7 @@ def build(output, commit):
         paths.extend(p for p in (ROOT / directory).rglob("*")
                      if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc")
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as package:
-        for path in sorted(paths):
+        for path in sorted(paths, key=lambda p: p.relative_to(ROOT).as_posix()):
             if path.is_symlink():
                 raise ValueError(f"Do not package symlinks: {path}")
             info = zipfile.ZipInfo(path.relative_to(ROOT).as_posix(), (2020, 1, 1, 0, 0, 0))
@@ -92,11 +92,11 @@ def build(output, commit):
         "skill_count": len(list((ROOT / "skills").glob("*/SKILL.md"))),
     }
     verify(archive, metadata)
-    (output / "latest.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
-    (output / "SHA256SUMS").write_text(f"{metadata['sha256']}  {archive.name}\n", encoding="utf-8")
+    (output / "latest.json").write_bytes((json.dumps(metadata, indent=2) + "\n").encode("utf-8"))
+    (output / "SHA256SUMS").write_bytes(f"{metadata['sha256']}  {archive.name}\n".encode("utf-8"))
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     notes = changelog.split(f"## {version} - ", 1)[1].split("\n", 1)[1].split("\n## ", 1)[0].strip()
-    (output / "RELEASE_NOTES.md").write_text(notes + "\n", encoding="utf-8")
+    (output / "RELEASE_NOTES.md").write_bytes((notes + "\n").encode("utf-8"))
     return metadata
 
 

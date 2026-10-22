@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5 - 2026-10-21
+
+- Normalized release member ordering and metadata line endings across Windows and Linux, preserving immutable published packages.
+
 ## 1.1.4 - 2026-10-21
 
 - Added validated, reproducible GitHub release ZIPs with versioned download metadata and SHA-256 checksums.

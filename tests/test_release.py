@@ -30,6 +30,7 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(len(checked["skills"]), len(list((ROOT / "skills").glob("*/SKILL.md"))))
         with zipfile.ZipFile(self.archive) as package:
             names = package.namelist()
+            self.assertEqual(names, sorted(names))
             self.assertIn("skills/gorvet-plugin-update/SKILL.md", names)
             self.assertIn("scripts/release_package.py", names)
             self.assertFalse(any(".git" in Path(n).parts or "__pycache__" in n for n in names))
@@ -43,6 +44,10 @@ class ReleaseTests(unittest.TestCase):
         second = release.build(self.output / "again", "a" * 40)
         self.assertEqual(self.metadata, second)
         self.assertEqual(before, (self.output / "again" / self.archive.name).read_bytes())
+        for filename in ["latest.json", "SHA256SUMS", "RELEASE_NOTES.md"]:
+            self.assertNotIn(b"\r\n", (self.output / filename).read_bytes())
+            self.assertEqual((self.output / filename).read_bytes(),
+                             (self.output / "again" / filename).read_bytes())
 
     def test_checksum_rejects_tampering(self):
         changed = dict(self.metadata, sha256="0" * 64)
